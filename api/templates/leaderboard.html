@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" class="text-gray-900 bg-[#EFEFEF] font-['Roboto'] sans-serif">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>league croissante</title>
+    <link rel="icon" type="image/x-icon" href="/static/asset/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css' )}}">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="w-8/12 mx-auto my-4 flex flex-row">
+        <a href="https://www.leaguecroissante.com/" class="flex items-center">
+            <img src="static/asset/logo.png" class="h-10" />
+            <span class="self-center pl-3 font-['Jua'] hidden lg:block text-2xl">league croissante</span>
+        </a>
+        <a class="ml-auto my-auto mr-1" href="{{ url_for('logout') }}">
+            <img src="{{USER.avatar_url}}" class="rounded-full h-10"/>
+        </a>
+    </header>
+    <main class="w-8/12 h-8/12 mx-auto mt-0 mb-5">
+        <div class="grid grid-cols-4 grid-rows-5 gap-4 w-full h-full">
+            <div class="col-span-4 row-span-1 xl:col-span-2 xl:row-span-1 rounded-2xl bg-[#0171BC] min-h-32 flex flex-col justify-between p-5 text-white">
+                <span class="block align-top text-left text-xl">Season {{ SEASON }}</span>
+                <div class="align-bottom text-left">
+                    <span class="block text-3xl font-semibold">{{ LEAGUE }} {{ SPLIT }} Split</span>
+                    <span class="block text-xl">Week {{ WEEK }}</span>
+                </div>
+            </div>
+            <div class="col-span-4 row-span-1 xl:col-span-2 xl:row-span-3 rounded-2xl bg-[#FFFFFF] min-h-32 flex flex-col justify-between p-5 text-black italic font-semibold">
+                <span class="block align-top text-3xl text-left">1st</span>
+            </div>
+            <div class="col-span-4 row-span-1 xl:col-span-2 xl:row-span-2 rounded-2xl bg-[#2ec17d] min-h-32 flex flex-col justify-between p-5 text-white italic font-semibold">
+                <span class="block align-top text-3xl text-left">2nd</span>
+            </div>
+            <div class="col-span-4 row-span-1 xl:col-span-2 xl:row-span-1 rounded-2xl bg-[#00a88a] min-h-32 flex flex-col justify-between p-5 text-white italic font-semibold">
+                <span class="block align-top text-3xl text-left">3rd</span>
+            </div>
+            <div class="col-span-4 row-span-1 xl:col-span-1 xl:row-span-1 rounded-2xl bg-[#788086] min-h-32 flex flex-col justify-between p-5 text-white italic font-semibold">
+                <span class="block align-top text-3xl text-left">4th</span>
+            </div>
+            <div class="col-span-4 row-span-1 xl:col-span-1 xl:row-span-1 rounded-2xl bg-[#7700ff] min-h-32 flex flex-col justify-between p-5 text-white italic font-semibold">
+                <span class="block align-top text-3xl text-left">you</span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
